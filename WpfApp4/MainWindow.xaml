@@ -1,0 +1,81 @@
+﻿<Window x:Class="WpfApp4.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp4"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+
+        <Grid.Background>
+            <ImageBrush ImageSource="E:\pic\background.png"/>
+        </Grid.Background>
+        <Grid.Resources>
+            <ImageBrush x:Key="Holly4Path" ImageSource="E:\pic\download.jpg" Viewport="0,0,20,20" ViewportUnits="Absolute" TileMode="Tile" />
+        </Grid.Resources>
+        <Border
+        BorderBrush="{StaticResource Holly4Path}" BorderThickness="22" CornerRadius="40"/>
+        <Path Name="starPath" Fill="White" StrokeThickness="1" Stroke="White" 
+          Data="M 127,37 L 104,105 L 34,105 L 91,150 L 69,218 L 127,176 L 187,218 L 164,150 L 223,105 L 151,105 L 127,37" Margin="388,63,276,302" Stretch="Fill" RenderTransformOrigin="0.687,0.4">
+        </Path>
+
+        <Canvas  ClipToBounds="True" Name="canMain">
+            <TextBlock Name="Text" Foreground="White" FontSize="32" FontStyle="Italic" Canvas.Left="72" Canvas.Top="54">Merry Christmas!</TextBlock>
+
+            <Rectangle x:Name="Gift1" MouseDown="Gift1_MouseDown" Fill="Red" Width="60" Height="48" Stroke="Black" Canvas.Left="679" Canvas.Top="249" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Center" VerticalAlignment="Top">
+                <Rectangle.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-0.802"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+            <Rectangle x:Name="Gift2" MouseDown="Gift2_MouseDown" Fill="Azure" Width="33" Height="35" Stroke="Black" Canvas.Left="618" Canvas.Top="229" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5">
+                <Rectangle.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-0.767"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+            <Rectangle x:Name="Gift3" MouseDown="Gift3_MouseDown" Fill="ForestGreen" Width="58" Height="26" Stroke="Black" Canvas.Left="618" Canvas.Top="264" RenderTransformOrigin="0.5,0.5">
+                <Rectangle.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="0.861"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+
+            <ComboBox Name="nameColor" Canvas.Top="31" Width="120" Canvas.Left="650">
+                <ComboBoxItem>Black</ComboBoxItem>
+                <ComboBoxItem>Red</ComboBoxItem>
+                <ComboBoxItem>Green</ComboBoxItem>
+                <ComboBoxItem>Yellow</ComboBoxItem>
+                <ComboBoxItem IsSelected="True">MediumPurple</ComboBoxItem>
+                <ComboBoxItem>White</ComboBoxItem>
+            </ComboBox>
+
+            <Polygon Name="Tree" MouseDown="Tree_MouseDown" Fill="ForestGreen" Canvas.Bottom="35" Canvas.Left ="308" Points="30, 5, 150, -250, 250, 5" Canvas.Top="366"/>
+            <Rectangle Name="Root" MouseDown="Root_MouseDown" Canvas.Left="496" Canvas.Top="427" Fill="Brown" Margin="484,367,293,38"/>
+
+            <ComboBox Name="ItemAdderCmb" Canvas.Left="660" Canvas.Top="156" Width="100">
+                <ComboBoxItem Name="Rectangle" IsSelected="True">Rectangle</ComboBoxItem>
+                <ComboBoxItem Name="Ball">Ball</ComboBoxItem>
+            </ComboBox>
+            <Button x:Name="Addbtn" Content="Add" FontStyle="Italic" FontWeight="Bold" MinHeight="25" MinWidth="100" Canvas.Left="660" Canvas.Top="178"  Click="Addbtn_Click" />
+        </Canvas>
+
+        <Button Content="Move" FontSize="12" FontWeight="Bold" FontStyle="Oblique" Click="Button_Click" Canvas.Left="651" Canvas.Top="62" Margin="651,107,30,286"/>
+        <Button Content="Paint" FontSize="12" FontWeight="Bold" FontStyle="Oblique" Click="Button_Click1" Canvas.Left="651" Canvas.Top="89" Margin="651,61,30,336"/>
+
+
+    </Grid>
+</Window>
